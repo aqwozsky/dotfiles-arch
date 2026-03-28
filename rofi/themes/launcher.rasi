@@ -1,0 +1,91 @@
+* {
+    font: "JetBrainsMono Nerd Font 12";
+    bg: rgba(17, 17, 27, 0.78);
+    bg-alt: rgba(30, 30, 46, 0.92);
+    fg: #e5e9f0;
+    selected: #a78bfa;
+    selected-fg: #11111b;
+    urgent: #ef4444;
+    border-col: rgba(167, 139, 250, 0.35);
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 520px;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 18px;
+    background-color: @bg;
+    padding: 18px;
+}
+
+mainbox {
+    spacing: 14px;
+    children: [ inputbar, message, listview ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 14px;
+    padding: 10px 14px;
+    spacing: 10px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    enabled: true;
+    text-color: @selected;
+}
+
+entry {
+    placeholder: "Bir şey seç aga...";
+    placeholder-color: rgba(229, 233, 240, 0.45);
+    text-color: @fg;
+}
+
+message {
+    enabled: false;
+}
+
+listview {
+    columns: 2;
+    lines: 3;
+    spacing: 12px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+}
+
+element {
+    background-color: @bg-alt;
+    border-radius: 16px;
+    padding: 16px;
+    spacing: 10px;
+    orientation: vertical;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @selected-fg;
+}
+
+element-icon {
+    size: 42px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    text-color: @fg;
+}
+
+element selected.normal element-text {
+    text-color: @selected-fg;
+}
+

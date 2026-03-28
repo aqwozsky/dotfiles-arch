@@ -1,0 +1,16 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 11, Symbols Nerd Font 11";  
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: " Apps";
+    display-run: " Run";
+    drun-display-format: "{name}";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+
+
+@theme "mytheme"

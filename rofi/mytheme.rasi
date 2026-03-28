@@ -1,0 +1,100 @@
+* {
+    bg:               rgba(17, 17, 27, 0.88);
+    bg-alt:           rgba(30, 30, 46, 0.95);
+    fg:               #cdd6f4;
+    fg-alt:           #a6adc8;
+    accent:           #89b4fa;
+    urgent:           #f38ba8;
+    selected:         rgba(137, 180, 250, 0.18);
+
+    background-color: transparent;
+    text-color:       @fg;
+    border:           0px;
+    margin:           0px;
+    padding:          0px;
+    spacing:          0px;
+}
+
+window {
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 720px;
+    border-radius: 18px;
+    background-color: @bg;
+    children: [ mainbox ];
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, message, listview ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    text-color: @fg;
+    border-radius: 18px 18px 0px 0px;
+    padding: 16px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    enabled: true;
+    text-color: @accent;
+    background-color: transparent;
+    padding: 0px 12px 0px 0px;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search apps...";
+    placeholder-color: @fg-alt;
+    expand: true;
+}
+
+message {
+    enabled: false;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    background-color: transparent;
+    padding: 12px;
+    spacing: 8px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    border-radius: 14px;
+    padding: 12px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @fg;
+}
+
+element-icon {
+    size: 28px;
+    background-color: transparent;
+    margin: 0px 12px 0px 0px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
